@@ -10,9 +10,3 @@ optimizer = false
 optimizer_runs = 100000
 
 fuzz.runs = 1024
-
-[profile.default.model_checker]
-contracts = {'src/LibFoo.sol' = ['LibFoo']}
-engine = 'chc'
-timeout = 10000
-targets = ['assert', 'underflow', 'overflow', 'divByZero', 'constantCondition', 'popEmptyArray', 'outOfBounds']

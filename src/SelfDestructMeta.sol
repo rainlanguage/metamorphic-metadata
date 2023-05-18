@@ -1,5 +1,6 @@
-//
 pragma solidity ^0.8.18;
+
+import "./Comment.sol";
 
 contract SelfDestructMeta {
     /// Comments seem harmless but they change the meta hash.
