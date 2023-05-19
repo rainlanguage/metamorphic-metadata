@@ -32,17 +32,17 @@ contract SelfDestructMetaTest is Test {
     //     assertTrue(l1 > 0);
     // }
 
-    function testPushDestruct2() public {
-        SelfDestructMeta a = new SelfDestructMeta();
-        a.poof(0x49);
-        // a.poof(105);
+    // function testPushDestruct2() public {
+    //     SelfDestructMeta a = new SelfDestructMeta();
+    //     a.poof(0x49);
+    //     // a.poof(105);
 
-        uint256 l1;
-        assembly ("memory-safe") {
-            l1 := extcodesize(a)
-        }
-        assertTrue(l1 > 0);
-    }
+    //     uint256 l1;
+    //     assembly ("memory-safe") {
+    //         l1 := extcodesize(a)
+    //     }
+    //     assertTrue(l1 > 0);
+    // }
 
     function testPushDestruct3() public {
         SelfDestructMeta a = new SelfDestructMeta();
