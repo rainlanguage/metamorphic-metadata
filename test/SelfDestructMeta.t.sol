@@ -44,11 +44,15 @@ contract SelfDestructMetaTest is Test {
     //     assertTrue(l1 > 0);
     // }
 
-    function testPushDestruct3() public {
+    function testSelfDestructDirect() public {
         SelfDestructMeta a = new SelfDestructMeta();
         console.logBytes(address(a).code);
+        a.poof(582);
+    }
 
-        // a.poof(258);
+    function testSelfDestruct3() public {
+        SelfDestructMeta a = new SelfDestructMeta();
+        console.logBytes(address(a).code);
 
         for (uint256 i = 0; i < 600; i++) {
             if (
