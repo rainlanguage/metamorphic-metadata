@@ -46,8 +46,14 @@ contract SelfDestructMetaTest is Test {
 
     function testSelfDestructDirect() public {
         SelfDestructMeta a = new SelfDestructMeta();
-        console.logBytes(address(a).code);
-        a.poof(582);
+        // console.logBytes(address(a).code);
+        a.poof(282);
+
+        uint256 l1;
+        assembly ("memory-safe") {
+            l1 := extcodesize(a)
+        }
+        assertTrue(l1 > 0);
     }
 
     function testSelfDestruct3() public {
